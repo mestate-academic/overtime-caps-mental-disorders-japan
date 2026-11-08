@@ -85,8 +85,10 @@ const page = { size: { width: 11906, height: 16838 }, margin: { top: 1440, botto
     if (t.landscape) { sections.push(mkSec(cur, false)); PB = false; cur = [...table(t)]; sections.push(mkSec(cur, true)); cur = []; }
     else { if (cur.length) pb(); cur.push(...table(t)); }
   }
-  for (const f of spec.figs) { pb(); cur.push(...figure(f)); }
+  // figures are uploaded as separate files (not embedded); legends only
   pb();
+  cur.push(P({ heading: HeadingLevel.HEADING_1, children: [new TextRun('FIGURE LEGENDS')] }));
+  for (const f of spec.figs) cur.push(P({ spacing: BODY_SP, children: [new TextRun({ text: f.title + ' ', bold: true }), new TextRun({ text: f.legend })] }));
   cur.push(P({ spacing: BODY_SP, children: R(spec.supp_line) }));
   sections.push(mkSec(cur, false));
   const doc = new Document({ styles, numbering, creator: 'Hironori Uematsu', sections });
