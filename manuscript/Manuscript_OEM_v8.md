@@ -12,7 +12,7 @@
 
 **Keywords:** working hours; occupational stress; workers' compensation; mental disorders; health policy
 
-**Licence:** exclusive licence to BMJ (subscription publication; no article processing charge). A preprint is posted on medRxiv [DOI to be added].
+**Licence:** exclusive licence to BMJ (subscription publication; no article processing charge). A preprint has been submitted to medRxiv.
 
 ---
 
