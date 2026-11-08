@@ -1,0 +1,17 @@
+Contrast,Outcome,Denominator,"IRR (95% CI), HC1","IRR (95% CI), wild cluster bootstrap",p (wild)
+Experiment 1,Approvals,Employed persons (main),1.07 (0.92 to 1.24),1.07 (0.77 to 1.50),0.53
+Experiment 1,Approvals,Employees,1.06 (0.91 to 1.24),1.06 (0.78 to 1.48),0.58
+Experiment 1,Claims,Employed persons (main),1.12 (1.02 to 1.23),1.12 (0.82 to 1.53),0.16
+Experiment 1,Claims,Employees,1.11 (1.02 to 1.22),1.11 (0.83 to 1.50),0.17
+Experiment 1,CVD approvals,Employed persons (main),1.01 (0.80 to 1.28),1.01 (0.40 to 1.57),0.97
+Experiment 1,CVD approvals,Employees,1.00 (0.79 to 1.27),1.00 (0.40 to 1.55),1.00
+Experiment 1,CVD claims,Employed persons (main),0.96 (0.85 to 1.08),0.96 (0.75 to 1.18),0.68
+Experiment 1,CVD claims,Employees,0.95 (0.84 to 1.07),0.95 (0.75 to 1.17),0.62
+Experiment 2,Approvals,Employed persons (main),1.10 (0.93 to 1.30),1.10 (0.93 to 1.50),0.16
+Experiment 2,Approvals,Employees,1.10 (0.93 to 1.30),1.10 (0.94 to 1.49),0.14
+Experiment 2,Claims,Employed persons (main),0.94 (0.87 to 1.03),0.94 (0.85 to 1.21),0.17
+Experiment 2,Claims,Employees,0.95 (0.87 to 1.03),0.95 (0.85 to 1.22),0.20
+Experiment 2,CVD approvals,Employed persons (main),0.96 (0.70 to 1.32),0.96 (0.59 to 1.22),0.76
+Experiment 2,CVD approvals,Employees,0.97 (0.71 to 1.34),0.97 (0.59 to 1.23),0.81
+Experiment 2,CVD claims,Employed persons (main),0.98 (0.88 to 1.08),0.98 (0.86 to 1.10),0.61
+Experiment 2,CVD claims,Employees,0.98 (0.88 to 1.09),0.98 (0.86 to 1.10),0.67

@@ -40,7 +40,8 @@ bash run_all.sh
 | 4 Precipitating events | `code/analyze4.py`, `code/build_events_2016.py` | `t17_events_approvals.csv`, `t24_events_2016_2025.csv` (Table 3) |
 | 5 Main DiD, sensitivity, placebo, Table 1 | `code/analyze5_sensitivity.py` | `output/tables/Table1_descriptive.csv`, `TableS6`, `TableS7_sensitivity.csv`, `TableS8`, `placebo.txt` |
 | 6 Event studies | `code/analyze6_eventstudy_pooled.py` | `TableS5_eventstudy_pooled.csv`, `t25_es_pooled.csv` (Figure 2) |
-| 6b Small-cluster inference | `code/analyze7_inference.py` | `TableS3b_inference.csv` (industry-clustered SEs, wild cluster score bootstrap with Webb weights, randomization inference, collapsed two-period models; supplementary table S3 and the wild-bootstrap column of Table 2), `inference_summary.pkl`; seed 20261108 |
+| 6b Small-cluster inference | `code/analyze7_inference.py` | `TableS3b_inference.csv` (industry-clustered SEs, wild cluster score bootstrap with Webb weights, placebo permutation analysis, collapsed two-period models; supplementary table S3 and the wild-bootstrap column of Table 2), `inference_summary.pkl`; seed 20261108 |
+| 6c Employees as denominator | `code/build_data6_employees.py`, `code/analyze8_employees_denominator.py` | `TableS3c_employees_denominator.csv` (main estimates with employees instead of employed persons in the offset; HC1 and wild cluster bootstrap), `TableS3c_nonemployee_share.csv`; rows appended to supplementary table S3 |
 | 7 Figures and tables S1–S4 | `code/make_figs_en.py` | `output/figures/*.png`, `TableS1–S4` |
 | 8 Word manuscript (optional) | `code/build_spec.py`, `node code/render_docx.js` | `manuscript/Manuscript_OEM_v8.docx`, `Supplementary_OEM_v6.docx` |
 
