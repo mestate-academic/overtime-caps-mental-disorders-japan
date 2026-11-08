@@ -29,7 +29,7 @@ for y in ['approvals','claims']:
     dd=d.copy()
     for fy in [2022,2023,2024,2025]: dd[f'e{fy}']=dd.exp_z*(dd.fy==fy)
     m=smf.glm(f'{y} ~ C(pref)+C(fy)+e2022+e2023+e2024+e2025',data=dd,family=sm.families.Poisson(),offset=np.log(dd.emp_total)).fit(cov_type='cluster',cov_kwds={'groups':dd.pref})
-    for fy in [2022,2023,2024,2025]: res.append([y,f'event study exp_z×FY{fy}（基準FY2021）','%.3f (%.3f-%.3f)'%(np.exp(m.params[f'e{fy}']),*np.exp(m.conf_int().loc[f'e{fy}']))])
+    for fy in [2022,2023,2024,2025]: res.append([y,f'event study exp_z×FY{fy}（基準FY2021）','%.3f (%.3f-%.3f) p=%.3f'%(np.exp(m.params[f'e{fy}']),*np.exp(m.conf_int().loc[f'e{fy}']),m.pvalues[f'e{fy}'])])
 R=pd.DataFrame(res,columns=['アウトカム','項','IRR (95%CI)']); R.to_csv(O+'t14_pref_did.csv',index=False); print(R.to_string())
 fig,ax=plt.subplots(1,2,figsize=(12,4.5))
 for k,s in g[g.expq!='中'].groupby('expq'): ax[0].plot(s.fy,s.rate,marker='o',label=k); ax[1].plot(s.fy,s.crate,marker='o',label=k)

@@ -38,7 +38,7 @@ function table(t, fontSize = 18) {
     shading: (hdr || opts.group) ? { fill: hdr ? 'E7E6E6' : 'F2F2F2', type: ShadingType.CLEAR, color: 'auto' } : undefined,
     margins: { top: 50, bottom: 50, left: 80, right: 80 }, verticalAlign: VerticalAlign.CENTER,
     children: [P({ alignment: (first || opts.group) ? AlignmentType.LEFT : AlignmentType.CENTER,
-      children: txt.replace(/\*\*/g, '').split('\n').map((line, i) => new TextRun({ text: line, bold: (hdr || opts.group || (/^\*\*/.test(txt))) && i === 0, size: fontSize, break: i > 0 ? 1 : undefined })) })],
+      children: txt.replace(/\*\*/g, '').split('\n').map((line, i) => new TextRun({ text: line, bold: (hdr || opts.group) || ((/^\*\*/.test(txt)) && i === 0), size: fontSize, break: i > 0 ? 1 : undefined })) })],
   });
   const titleP = P({ spacing: { after: 160 }, keepNext: true, children: R(t.title, { size: 22 }) });
   const rows = [];

@@ -131,12 +131,21 @@ json.dump({'blocks':blocks,'tables':tables,'figs':figs,'supp_line':runs(supp_lin
 # ---------------- supplementary ----------------
 def df_table(df):
     h=list(df.columns); r=[[str(x) for x in row] for row in df.values]; return h,r
+def grp(df,key,lab=None):
+    rows=[];cur=None
+    for _,row in df.iterrows():
+        g=row[key]
+        if g!=cur: rows.append('\u00a7'+(lab.get(g,g) if lab else str(g))); cur=g
+        rows.append([str(row[c]) for c in df.columns if c!=key])
+    return rows
 st=[]
 s1=pd.read_csv(S+'TableS1.csv'); h,r=df_table(s1)
 st.append({'title':[['Table S1',1,0],[' Transcription checks: transcribed counts compared with published national totals, FY2016–2025',0,0]],'header':h,'rows':r,'widths':widths(h,r,total=13900,minw=1100),'font':15,'landscape':True,
- 'note':'Industry-level counts were transcribed from the MHLW annual reports (each lists the current and the previous fiscal year; overlapping years were cross-checked, and approvals were also checked against an MHLW committee compilation); prefecture-level counts are available from FY2021. CVD, cerebro-cardiovascular diseases. Reports no longer hosted by the ministry (FY2019–FY2021) were retrieved from the Internet Archive; the FY2024 prefecture table (image only) was transcribed manually. "–", not transcribed. All transcribed series sum exactly to the published national totals.'})
+ 'note':'Industry-level counts were transcribed from the MHLW annual reports (each lists the current and the previous fiscal year; overlapping years were cross-checked, and approvals were also checked against an MHLW committee compilation); prefecture-level counts are available from FY2021. CVD, cerebro-cardiovascular diseases. Reports no longer hosted by the ministry (FY2019–FY2021) were retrieved from the Internet Archive; the FY2024 prefecture table (image only) was transcribed manually. "–", not available (prefecture counts are published only from FY2021). All transcribed series sum exactly to the published national totals.'})
 s5=pd.read_csv(S+'TableS5_eventstudy_pooled.csv'); h,r=df_table(s5)
-st.append({'title':[['Table S2',1,0],[' Event studies for the two natural experiments, relative to the mean of each experiment\u2019s pre-cap period',0,0]],'header':h,'rows':r,'widths':[1500,700,1500,1776,1776,1776],'font':15,
+h=[x.replace(', IRR (95% CI)',', IRR\n(95% CI)') for x in h][1:]
+r=grp(s5,'Experiment',{'Experiment 1':'Experiment 1 (April 2019/2020 cap): six comparison industries newly capped vs construction and transport','Experiment 2':'Experiment 2 (April 2024 cap): construction and transport newly capped vs six comparison industries'})
+st.append({'title':[['Table S2',1,0],[' Event studies for the two natural experiments, relative to the mean of each experiment\u2019s pre-cap period',0,0]],'header':h,'rows':r,'widths':[900,1726,2100,2100,2100],'font':15,
  'note':'Experiment 1 (April 2019/2020 cap): six comparison industries (newly capped) vs construction and transport, FY2016–2023, reference = mean of FY2016–2018. Experiment 2 (April 2024 cap): construction and transport (newly capped) vs six comparison industries, FY2020–2025 (FY2020 is the first year in which all six control industries were capped), reference = mean of FY2021–2023. Each IRR is the deviation of that year from the pre-cap mean (delta method), so every year, including reference years, has a CI. Poisson regression with industry and year fixed effects, newly capped group × year interactions, log employed persons as offset and HC1 standard errors. MD, mental disorders; CVD, cerebro-cardiovascular diseases (positive control for exposure). MD and CVD approvals are plotted in figure 2.'})
 s7=pd.read_csv(S+'TableS7_sensitivity.csv'); s7['Contrast']=s7['Contrast'].map({'2024 cap':'Experiment 2','2019–20 cap':'Experiment 1'})
 s7['Type']=np.where(s7['Specification'].str.contains('post hoc'),'Post hoc',np.where(s7['Specification'].str.startswith('Main')|s7['Specification'].str.contains(', main'),'Main','Prespecified'))
@@ -148,22 +157,37 @@ _emp=pd.read_csv(S+'TableS3c_employees_denominator.csv'); _emp=_emp[_emp['Denomi
 _emp2=pd.DataFrame({'Contrast':_emp['Contrast'],'Specification':'Employees instead of employed persons as denominator','Outcome':_emp['Outcome'],'IRR (95% CI)':_emp['IRR (95% CI), HC1'],'p':'–','Type':'Post hoc'})
 s3a=pd.concat([s7,_ch2,_emp2],ignore_index=True)
 s3a['_o']=s3a['Type'].map({'Main':0,'Prespecified':1,'Post hoc':2}); s3a=s3a.sort_values(['_o','Contrast'],kind='stable').drop(columns='_o')
-s3a=s3a[['Type','Contrast','Specification','Outcome','IRR (95% CI)']].rename(columns={'IRR (95% CI)':'IRR (95% CI, HC1)'})
-h=list(s3a.columns); r=[[str(x) for x in row] for row in s3a.values]
-st.append({'title':[['Table S3a',1,0],[' Sensitivity analyses for the difference-in-differences estimates (prespecified and post hoc)',0,0]],'header':h,'rows':r,'widths':[1450,1250,3326,1200,1800],
+s3a['_k']=s3a['Type'].map({'Main':'Main analyses','Prespecified':'Prespecified sensitivity analyses','Post hoc':'Post hoc sensitivity analyses'})+': '+s3a['Contrast']
+s3a['Outcome']=s3a['Outcome'].replace({'Approvals':'MD approvals','Claims':'MD claims'})
+s3a=s3a[['_k','Specification','Outcome','IRR (95% CI)']].rename(columns={'IRR (95% CI)':'IRR (95% CI, HC1)'})
+h=['Specification','Outcome','IRR (95% CI, HC1)']; r=grp(s3a,'_k')
+st.append({'title':[['Table S3a',1,0],[' Sensitivity analyses for the difference-in-differences estimates (prespecified and post hoc)',0,0]],'header':h,'rows':r,'widths':[4826,1600,2300],
  'note':'Poisson regression with industry and year fixed effects and log employed persons as offset; 95% CI from HC1 standard errors, which ignore the small number of industries (see table S3b for small-cluster inference). Experiment 1 (April 2019/2020 cap): six comparison industries newly capped vs construction and transport, FY2016–2018 vs FY2019–2023 unless stated. Experiment 2 (April 2024 cap): construction and transport newly capped vs six comparison industries (already capped), FY2021–2023 vs FY2024–2025 unless stated. Prespecified analyses were planned before the main estimates were examined; post hoc analyses were added afterwards (including the customer-harassment exclusion and employees as denominator). Excluding FY2023: in experiment 2 this tests the choice of reference period, because the FY2023 rise preceded the cap. Employees: Labour Force Survey, 2025 annual average results, table I-8; employees exclude the self-employed and family workers, who are not covered by workers’ compensation insurance; the non-employee share was 11.3–12.4% in construction and transport and 5.6–6.8% in the six comparison industries in FY2016–2025; wild cluster bootstrap 95% CIs 0.78 to 1.48 (experiment 1, approvals) and 0.94 to 1.49 (experiment 2, approvals). CVD, cerebro-cardiovascular diseases (positive control for exposure).'})
 _inf=_inf[~_inf['Inference / specification'].str.startswith('Excluding wholesale')]
 _isperm=_inf['Inference / specification'].str.startswith('Placebo permutation')
 _inf.loc[_isperm,'IRR (95% CI)']=_inf.loc[_isperm,'IRR (95% CI)'].str.replace(r' \(.*\)','',regex=True)+' (no interval)'
 _inf.loc[_isperm,'Inference / specification']='Placebo permutation (28 assignments; descriptive)'
 s3b=pd.DataFrame({'Contrast':_inf['Contrast'],'Outcome':_inf['Outcome'],'Method of inference':_inf['Inference / specification'].str.replace('Main: HC1 robust SE (as in table 2)','HC1 robust SE (table 2, column 2)',regex=False),'IRR (95% CI)':_inf['IRR (95% CI)'],'p':_inf['p']})
-h=list(s3b.columns); r=[[str(x) for x in row] for row in s3b.values]
-st.append({'title':[['Table S3b',1,0],[' Small-cluster inference for the main difference-in-differences estimates',0,0]],'header':h,'rows':r,'widths':[1250,1250,3426,2200,900],
+_x23=s3b['Method of inference'].str.startswith('Excluding FY2023')
+s3b['Outcome']=s3b['Outcome'].replace({'Approvals':'MD approvals','Claims':'MD claims'})
+s3b.loc[_x23,'Outcome']='MD approvals, excluding FY2023'
+s3b.loc[_x23,'Method of inference']='Wild cluster score bootstrap (Webb weights, 9999 draws)'
+s3b['_k']=s3b['Contrast']+': '+s3b['Outcome']
+s3b=s3b[['_k','Method of inference','IRR (95% CI)','p']]
+h=['Method of inference','IRR (95% CI)','p']; r=grp(s3b,'_k')
+st.append({'title':[['Table S3b',1,0],[' Small-cluster inference for the main difference-in-differences estimates',0,0]],'header':h,'rows':r,'widths':[4826,2700,1200],
  'note':'Each experiment has eight industries (clusters), of which only two were newly capped (experiment 2) or served as controls (experiment 1). Wild cluster score bootstrap (primary method of inference; table 2): Kline and Santos score bootstrap clustered by industry with Webb six-point weights (9999 draws; seed 20261108), p value at IRR=1 and 95% CI by test inversion; it may still be unreliable with so few treated or control clusters (MacKinnon and Webb 2018). Sensitivity analyses: SE clustered by industry with t(7) critical values; placebo permutation, in which the treatment label is assigned to each of the 28 possible pairs of the eight industries (for experiment 2, placebo IRRs ranged from 0.79 to 1.15 and half were below 1). Placebo permutation results are descriptive only: the p value is the rank of the observed estimate among the 28 placebo estimates, and neither it nor an interval obtained by test inversion should be interpreted as randomization-based inference, because industry treatment assignments were not random or exchangeable; no interval is therefore reported; collapsed, in which counts and employment are summed within each industry for the pre-cap and post-cap periods (16 observations, HC1 standard errors), which should not be given more weight than the bootstrap. Excluding FY2023: wild cluster score bootstrap for the specification in table S3a. CVD, cerebro-cardiovascular diseases (positive control for exposure).'})
 s3=pd.read_csv(S+'TableS3.csv'); s3['IRR (95% CI)']=s3['IRR (95% CI)'].str.replace(r' p=.*','',regex=True)
 t14=pd.read_csv(O+'t14_pref_did.csv'); pv=t14['IRR (95%CI)'].str.extract(r'p=([\d.]+)')[0].fillna('–')
-s3['p']=pv.values; h,r=df_table(s3)
-st.append({'title':[['Table S4',1,0],[' Prefecture panel: Poisson models of approvals and claims for mental disorders (47 prefectures × FY2021–2025)',0,0]],'header':h,'rows':r,'widths':widths(h,r,first=40),
+s3['p']=[('<0.001' if float(x)<0.001 else f'{float(x):.2f}') if x!='\u2013' else '\u2013' for x in pv.values]
+def _two(v):
+    m=re.match(r'([\d.]+) \(([\d.]+) to ([\d.]+)\)',v); a,b,c=map(float,m.groups()); return f'{a:.2f}\n({b:.2f} to {c:.2f})'
+s3['IRR (95% CI)']=s3['IRR (95% CI)'].map(_two)
+s3['Outcome']=s3['Outcome'].replace({'Approvals':'MD approvals','Claims':'MD claims'})
+s3=s3.sort_values('Outcome',kind='stable')
+s3['Term']=s3['Term'].str.replace(r' \((ref\.|model)',lambda m: '\n('+m.group(1),regex=True)
+h=['Term','IRR (95% CI)','p']; r=grp(s3,'Outcome')
+st.append({'title':[['Table S4',1,0],[' Prefecture panel: Poisson models of approvals and claims for mental disorders (47 prefectures × FY2021–2025)',0,0]],'header':h,'rows':r,'widths':[5226,2300,1200],
  'note':'IRR, incidence rate ratio per SD of exposure (standardised 2015 share of employment in construction and transport). All models include prefecture and year fixed effects and log employed persons as offset; standard errors clustered by prefecture. Event-study rows use FY2021 as reference.'})
 
 strobe=[
