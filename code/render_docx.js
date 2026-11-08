@@ -69,7 +69,7 @@ const page = { size: { width: 11906, height: 16838 }, margin: { top: 1440, botto
 {
   const spec = JSON.parse(fs.readFileSync(OUT + 'spec_main.json'));
   const kids = [];
-  let inRefs = false;
+  let inRefs = false; const placed = new Set();
   for (const b of spec.blocks) {
     if (b.t === 'pb') { pb(); continue; }
     if (b.t === 'h1') { kids.push(P({ style: 'Title', children: [new TextRun(b.text)] })); continue; }
@@ -78,10 +78,19 @@ const page = { size: { width: 11906, height: 16838 }, margin: { top: 1440, botto
     if (b.t === 'bullet') { kids.push(P({ numbering: { reference: 'bul', level: 0 }, spacing: BODY_SP, children: R(b.runs) })); continue; }
     if (b.t === 'ref') { kids.push(P({ spacing: { after: 80 }, indent: { left: 440, hanging: 440 }, children: [new TextRun(b.n + '.\t'), ...R(b.runs, { size: 20 })] })); continue; }
     kids.push(P({ spacing: BODY_SP, children: R(b.runs) }));
+    // place each table directly after the paragraph that first cites it (BMJ style)
+    if (!inRefs) {
+      const txt = (b.runs || []).map(r => r[0]).join('');
+      for (const m of txt.matchAll(/\btables? (\d)\b/gi)) {
+        const k = +m[1]; const t = spec.tables[k - 1];
+        if (t && !placed.has(k)) { placed.add(k); kids.push(...table(t)); kids.push(P({ spacing: { after: 240 }, children: [] })); }
+      }
+    }
   }
   const sections = []; let cur = kids;
   const mkSec = (children, landscape) => ({ properties: { page: landscape ? { size: { width: 11906, height: 16838, orientation: PageOrientation.LANDSCAPE }, margin: page.margin } : page, lineNumbers: { countBy: 1, restart: LineNumberRestartFormat.CONTINUOUS } }, footers: { default: footer() }, children });
-  for (const t of spec.tables) {
+  for (const [ti, t] of spec.tables.entries()) {
+    if (placed.has(ti + 1)) continue;
     if (t.landscape) { sections.push(mkSec(cur, false)); PB = false; cur = [...table(t)]; sections.push(mkSec(cur, true)); cur = []; }
     else { if (cur.length) pb(); cur.push(...table(t)); }
   }

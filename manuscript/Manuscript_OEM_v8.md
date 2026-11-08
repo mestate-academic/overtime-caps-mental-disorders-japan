@@ -14,7 +14,7 @@
 
 **Keywords:** working hours; occupational stress; workers' compensation; mental disorders; health policy
 
-**Licence:** exclusive licence to BMJ (subscription publication; no article processing charge). A preprint has been submitted to medRxiv.
+**Preprint:** submitted to medRxiv (MEDRXIV/2026/367518).
 
 ---
 
@@ -130,44 +130,44 @@ In national workers' compensation data, the introduction of Japan's statutory ov
 
 ## REFERENCES (Vancouver)
 
-1. Pega F, Náfrádi B, Momen NC, et al. Global, regional, and national burdens of ischemic heart disease and stroke attributable to exposure to long working hours for 194 countries, 2000–2016: a systematic analysis from the WHO/ILO Joint Estimates of the Work-related Burden of Disease and Injury. *Environ Int* 2021;154:106595.
-2. Rugulies R, Sørensen K, Di Tecco C, et al. The effect of exposure to long working hours on depression: a systematic review and meta-analysis from the WHO/ILO Joint Estimates of the Work-related Burden of Disease and Injury. *Environ Int* 2021;155:106629.
-3. Virtanen M, Jokela M, Madsen IE, et al. Long working hours and depressive symptoms: systematic review and meta-analysis of published studies and unpublished individual participant data. *Scand J Work Environ Health* 2018;44:239–50.
+1. Pega F, Náfrádi B, Momen NC, et al. Global, regional, and national burdens of ischemic heart disease and stroke attributable to exposure to long working hours for 194 countries, 2000–2016: a systematic analysis from the WHO/ILO Joint Estimates of the Work-related Burden of Disease and Injury. *Environ Int* 2021;154:106595. doi:10.1016/j.envint.2021.106595
+2. Rugulies R, Sørensen K, Di Tecco C, et al. The effect of exposure to long working hours on depression: a systematic review and meta-analysis from the WHO/ILO Joint Estimates of the Work-related Burden of Disease and Injury. *Environ Int* 2021;155:106629. doi:10.1016/j.envint.2021.106629
+3. Virtanen M, Jokela M, Madsen IE, et al. Long working hours and depressive symptoms: systematic review and meta-analysis of published studies and unpublished individual participant data. *Scand J Work Environ Health* 2018;44:239–50. doi:10.5271/sjweh.3712
 4. Act on the Arrangement of Related Acts to Promote Work Style Reform (Act No. 71 of 2018). Tokyo: MHLW, 2018.
 5. Saito T. How much will working hours fall with the "2024 problem" in construction and logistics? Tokyo: NLI Research Institute, 2024 (in Japanese).
 6. Burdin G, Kambayashi R, Kato T. The impact of overtime limits on firms and workers: evidence from Japan's Work Style Reform. IZA Discussion Paper No. 17583. Bonn: IZA, 2024.
 7. Kawaguchi D, Ogawa K. Can capping overtime improve worker welfare? Evidence from Japan's 2019 labor reform. RIETI Discussion Paper 26-E-034. Tokyo: RIETI, 2026.
-8. Jiang M, Sasaki S. Do overtime regulations reduce overtime work in Japan? *J Jpn Int Econ* 2026;81:101436.
-9. Kohara M, Noda T. The causal effects of working time on mental health: the effectiveness of the law reform raising the overtime wage penalty. *Pac Econ Rev* 2023;28:638–64.
-10. Lin RT, Liang YW, Takahashi M, et al. Effect of implementing an overwork-prevention act on working hours and overwork-related disease: a mediation analysis. *J Occup Health* 2020;62:e12148.
+8. Jiang M, Sasaki S. Do overtime regulations reduce overtime work in Japan? *J Jpn Int Econ* 2026;81:101436. doi:10.1016/j.jjie.2026.101436
+9. Kohara M, Noda T. The causal effects of working time on mental health: the effectiveness of the law reform raising the overtime wage penalty. *Pac Econ Rev* 2023;28:638–64. doi:10.1111/1468-0106.12441
+10. Lin RT, Liang YW, Takahashi M, et al. Effect of implementing an overwork-prevention act on working hours and overwork-related disease: a mediation analysis. *J Occup Health* 2020;62:e12148. doi:10.1002/1348-9585.12148
 11. Ministry of Health, Labour and Welfare. Ex post evaluation of regulation: upper limits on overtime work (Labour Standards Act, article 36). Tokyo: MHLW, January 2025 (in Japanese).
 12. Ministry of Health, Labour and Welfare. Status of workers' compensation for karoshi and related disorders, FY2016–FY2025. Tokyo: MHLW (annual; FY2025 edition published 15 July 2026; in Japanese).
-13. Takahashi M. Sociomedical problems of overwork-related deaths and disorders in Japan. *J Occup Health* 2019;61:269–77.
+13. Takahashi M. Sociomedical problems of overwork-related deaths and disorders in Japan. *J Occup Health* 2019;61:269–77. doi:10.1002/1348-9585.12016
 14. Ministry of Health, Labour and Welfare. Recognition criteria for mental disorders caused by psychological burden: Notification Kihatsu 1226 No. 1, 26 December 2011, as revised by Notifications Kihatsu 0529 No. 1, 29 May 2020 (power harassment added) and Kihatsu 0901 No. 2, 1 September 2023 (customer harassment added). Tokyo: MHLW (in Japanese).
-15. von Elm E, Altman DG, Egger M, et al. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. *Lancet* 2007;370:1453–7.
+15. von Elm E, Altman DG, Egger M, et al. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. *Lancet* 2007;370:1453–7. doi:10.1016/S0140-6736(07)61602-X
 16. Ministry of Health, Labour and Welfare. Status of workers' compensation for mental disorders, etc. Material 2, 1st Meeting of the Expert Committee on Recognition Criteria for Mental Disorders, 6 December 2021. Tokyo: MHLW, 2021 (in Japanese).
 17. Statistics Bureau of Japan. Labour Force Survey, basic tabulation: table 2-5-1 (e-Stat, 2026) and 2025 annual average results, table I-8 (employed persons and employees by industry). Tokyo: Statistics Bureau of Japan, 2026.
 18. Statistics Bureau of Japan. 2015 Population Census, employment status basic tabulation, table 00510. e-Stat, 2017.
-19. Goodman-Bacon A. Difference-in-differences with variation in treatment timing. *J Econom* 2021;225:254–77.
-20. Lin RT, Chien LC, Kawachi I. Nonlinear associations between working hours and overwork-related cerebrovascular and cardiovascular diseases (CCVD). *Sci Rep* 2018;8:9694.
-21. Cameron AC, Gelbach JB, Miller DL. Bootstrap-based improvements for inference with clustered errors. *Rev Econ Stat* 2008;90:414–27.
-22. Kline P, Santos A. A score based approach to wild bootstrap inference. *J Econom Methods* 2012;1:23–41.
-23. Webb MD. Reworking wild bootstrap-based inference for clustered errors. *Can J Econ* 2023;56:839–58.
-24. MacKinnon JG, Webb MD. The wild bootstrap for few (treated) clusters. *Econom J* 2018;21:114–35.
-25. Bertrand M, Duflo E, Mullainathan S. How much should we trust differences-in-differences estimates? *Q J Econ* 2004;119:249–75.
+19. Goodman-Bacon A. Difference-in-differences with variation in treatment timing. *J Econom* 2021;225:254–77. doi:10.1016/j.jeconom.2021.03.014
+20. Lin RT, Chien LC, Kawachi I. Nonlinear associations between working hours and overwork-related cerebrovascular and cardiovascular diseases (CCVD). *Sci Rep* 2018;8:9694. doi:10.1038/s41598-018-28141-2
+21. Cameron AC, Gelbach JB, Miller DL. Bootstrap-based improvements for inference with clustered errors. *Rev Econ Stat* 2008;90:414–27. doi:10.1162/rest.90.3.414
+22. Kline P, Santos A. A score based approach to wild bootstrap inference. *J Econom Methods* 2012;1:23–41. doi:10.1515/2156-6674.1006
+23. Webb MD. Reworking wild bootstrap-based inference for clustered errors. *Can J Econ* 2023;56:839–58. doi:10.1111/caje.12661
+24. MacKinnon JG, Webb MD. The wild bootstrap for few (treated) clusters. *Econom J* 2018;21:114–35. doi:10.1111/ectj.12107
+25. Bertrand M, Duflo E, Mullainathan S. How much should we trust differences-in-differences estimates? *Q J Econ* 2004;119:249–75. doi:10.1162/003355304772839588
 26. Ministry of Education, Culture, Sports, Science and Technology; Ministry of Health, Labour and Welfare; Ministry of Economy, Trade and Industry. Ethical Guidelines for Medical and Biological Research Involving Human Subjects. Tokyo, 2021 (partially revised 2023), Chapter 1, Section 3 (scope).
 27. Ministry of Health, Labour and Welfare. Results of inspection and guidance at workplaces suspected of long working hours, FY2024. Tokyo: MHLW, 30 July 2025 (in Japanese).
 28. Morioka K. Labour–management autonomy and legal regulation in the determination of working hours. *Japanese Journal of Labour Studies* 2016;58(677):53–63 (in Japanese).
 29. Sato K. Actual condition of overtime and its determinants: comparative analysis using four panel data sets. RIETI Discussion Paper 19-J-006. Tokyo: RIETI, 2019 (in Japanese).
-30. Matsumoto R, Motomura E, Okada M. Impacts of working hours, wages, and regular employment opportunity on suicide mortalities of employed and unemployed individuals before and during the COVID-19 pandemic in Japan. *Int J Environ Res Public Health* 2024;21:499.
-31. Yamauchi T, Sasaki T, Yoshikawa T, et al. Differences in work-related adverse events by sex and industry in cases involving compensation for mental disorders and suicide in Japan from 2010 to 2014. *J Occup Environ Med* 2018;60:e178–82.
-32. Theorell T, Hammarström A, Aronsson G, et al. A systematic review including meta-analysis of work environment and depressive symptoms. *BMC Public Health* 2015;15:738.
-33. Verkuil B, Atasayi S, Molendijk ML. Workplace bullying and mental health: a meta-analysis on cross-sectional and longitudinal data. *PLoS One* 2015;10:e0135225.
-34. Motegi H. Does harassment prevention law reduce harassment in workplaces? *Works Discussion Paper* 2021;55:1–16. Tokyo: Recruit Works Institute.
+30. Matsumoto R, Motomura E, Okada M. Impacts of working hours, wages, and regular employment opportunity on suicide mortalities of employed and unemployed individuals before and during the COVID-19 pandemic in Japan. *Int J Environ Res Public Health* 2024;21:499. doi:10.3390/ijerph21040499
+31. Yamauchi T, Sasaki T, Yoshikawa T, et al. Differences in work-related adverse events by sex and industry in cases involving compensation for mental disorders and suicide in Japan from 2010 to 2014. *J Occup Environ Med* 2018;60:e178–82. doi:10.1097/JOM.0000000000001283
+32. Theorell T, Hammarström A, Aronsson G, et al. A systematic review including meta-analysis of work environment and depressive symptoms. *BMC Public Health* 2015;15:738. doi:10.1186/s12889-015-1954-4
+33. Verkuil B, Atasayi S, Molendijk ML. Workplace bullying and mental health: a meta-analysis on cross-sectional and longitudinal data. *PLoS One* 2015;10:e0135225. doi:10.1371/journal.pone.0135225
+34. Motegi H. Does harassment prevention law reduce harassment in workplaces? *Works Discussion Paper* 2021;55:1–16. doi:10.34391/works.55.0_1
 35. Act Partially Amending the Act on Comprehensive Promotion of Labour Policies and Other Acts (Act No. 63 of 2025, promulgated 11 June 2025; employer measures against customer harassment in force from 1 October 2026); Ministry of Health, Labour and Welfare Notification No. 51 of 26 February 2026 (guideline on employers' measures against customer harassment). Tokyo: MHLW (in Japanese).
 36. Ministry of Health, Labour and Welfare. Recognition criteria for cerebrovascular and ischaemic heart disease caused by work: Notification Kihatsu 0914 No. 1, 14 September 2021. Tokyo: MHLW (in Japanese).
-37. Lin RT, Lin CK, Christiani DC, et al. The impact of the introduction of new recognition criteria for overwork-related cardiovascular and cerebrovascular diseases: a cross-country comparison. *Sci Rep* 2017;7:167.
-38. Lin SH, Chou MY, Lin RT. Mediation analysis for new recognition criteria, working hours and overwork-related disease: a nationwide ecological study using 11-year follow-up data in Taiwan. *BMJ Open* 2019;9:e028973.
+37. Lin RT, Lin CK, Christiani DC, et al. The impact of the introduction of new recognition criteria for overwork-related cardiovascular and cerebrovascular diseases: a cross-country comparison. *Sci Rep* 2017;7:167. doi:10.1038/s41598-017-00198-5
+38. Lin SH, Chou MY, Lin RT. Mediation analysis for new recognition criteria, working hours and overwork-related disease: a nationwide ecological study using 11-year follow-up data in Taiwan. *BMJ Open* 2019;9:e028973. doi:10.1136/bmjopen-2019-028973
 39. Ministry of Health, Labour and Welfare. Press conference of the Minister of Health, Labour and Welfare on taking office, 22 October 2025 (instruction from the Prime Minister to consider relaxing working-time regulation, premised on health and worker choice). Tokyo: MHLW (in Japanese).
 40. Ministry of Health, Labour and Welfare. Revision of consultation, support and inspection guidance on overtime work (press release, 19 August 2026; in force from 1 September 2026). Tokyo: MHLW (in Japanese).
 
