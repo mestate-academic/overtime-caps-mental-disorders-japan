@@ -5,6 +5,7 @@ title: "Data and code for: Statutory overtime caps and compensated mental disord
 authors:
   - family-names: Uematsu
     given-names: Hironori
+    orcid: "https://orcid.org/0009-0006-9927-7473"
     affiliation: "Uematsu Occupational Physician's Office (Mestate LLC), Kyoto, Japan"
     email: office@mestate.jp
 version: "1.0.0"
@@ -24,5 +25,6 @@ preferred-citation:
   authors:
     - family-names: Uematsu
       given-names: Hironori
+      orcid: "https://orcid.org/0009-0006-9927-7473"
   year: 2026
   journal: "medRxiv (preprint; DOI to be added)"

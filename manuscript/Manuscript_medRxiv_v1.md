@@ -6,6 +6,8 @@
 
 **Correspondence to:** Dr Hironori Uematsu, Uematsu Occupational Physician's Office, Nakagyo-ku, Kyoto, Japan; office@mestate.jp
 
+**ORCID:** https://orcid.org/0009-0006-9927-7473
+
 **Preprint.** This manuscript has not been peer reviewed. It has been submitted to a journal. Version 1, November 2026.
 
 **Licence:** CC BY 4.0. **Word count:** main text 3,165 words; abstract 246 words. **Tables:** 3. **Figures:** 2. **References:** 40. Supplementary material (5 tables, STROBE checklist) follows the main text.

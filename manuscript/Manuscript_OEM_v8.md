@@ -8,6 +8,8 @@
 
 **Correspondence to:** Dr Hironori Uematsu, Uematsu Occupational Physician's Office, Nakagyo-ku, Kyoto, Japan; office@mestate.jp
 
+**ORCID:** https://orcid.org/0009-0006-9927-7473
+
 **Word count:** main text 3,165 words; abstract 246 words. **Tables:** 3. **Figures:** 2. **References:** 40. **Online supplemental material:** 5 tables (S1, S2, S3a, S3b, S4); STROBE checklist submitted as a separate file.
 
 **Keywords:** working hours; occupational stress; workers' compensation; mental disorders; health policy
