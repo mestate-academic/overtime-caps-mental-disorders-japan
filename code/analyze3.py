@@ -19,18 +19,21 @@ g.to_csv(O+'t13_pref_exposure_groups.csv',index=False)
 def fit(y,extra=''):
     m=smf.glm(f'{y} ~ C(pref)+C(fy)+exp_z:post24'+extra,data=d,family=sm.families.Poisson(),offset=np.log(d.emp_total)).fit(cov_type='cluster',cov_kwds={'groups':d.pref})
     return m
+def fmt(m,k):
+    v=np.exp(m.params[k]); lo,hi=np.exp(m.conf_int().loc[k]); pv=m.pvalues[k]
+    return ['%.3f (%.3f-%.3f) p=%.3f'%(v,lo,hi,pv),v,lo,hi,pv]
 res=[]
 for y in ['approvals','claims']:
-    m=fit(y); res.append([y,'exp_z×post2024（1SD曝露増あたり）','%.3f (%.3f-%.3f) p=%.3f'%(np.exp(m.params['exp_z:post24']),*np.exp(m.conf_int().loc['exp_z:post24']),m.pvalues['exp_z:post24'])])
-    m2=fit(y,'+exp_z:y23'); res.append([y,'exp_z×FY2023（先行）','%.3f (%.3f-%.3f) p=%.3f'%(np.exp(m2.params['exp_z:y23']),*np.exp(m2.conf_int().loc['exp_z:y23']),m2.pvalues['exp_z:y23'])])
-    res.append([y,'exp_z×post2024（FY2023先行項を含むモデル）','%.3f (%.3f-%.3f) p=%.3f'%(np.exp(m2.params['exp_z:post24']),*np.exp(m2.conf_int().loc['exp_z:post24']),m2.pvalues['exp_z:post24'])])
+    m=fit(y); res.append([y,'exp_z×post2024（1SD曝露増あたり）',*fmt(m,'exp_z:post24')])
+    m2=fit(y,'+exp_z:y23'); res.append([y,'exp_z×FY2023（先行）',*fmt(m2,'exp_z:y23')])
+    res.append([y,'exp_z×post2024（FY2023先行項を含むモデル）',*fmt(m2,'exp_z:post24')])
 # event study by year
 for y in ['approvals','claims']:
     dd=d.copy()
     for fy in [2022,2023,2024,2025]: dd[f'e{fy}']=dd.exp_z*(dd.fy==fy)
     m=smf.glm(f'{y} ~ C(pref)+C(fy)+e2022+e2023+e2024+e2025',data=dd,family=sm.families.Poisson(),offset=np.log(dd.emp_total)).fit(cov_type='cluster',cov_kwds={'groups':dd.pref})
-    for fy in [2022,2023,2024,2025]: res.append([y,f'event study exp_z×FY{fy}（基準FY2021）','%.3f (%.3f-%.3f) p=%.3f'%(np.exp(m.params[f'e{fy}']),*np.exp(m.conf_int().loc[f'e{fy}']),m.pvalues[f'e{fy}'])])
-R=pd.DataFrame(res,columns=['アウトカム','項','IRR (95%CI)']); R.to_csv(O+'t14_pref_did.csv',index=False); print(R.to_string())
+    for fy in [2022,2023,2024,2025]: res.append([y,f'event study exp_z×FY{fy}（基準FY2021）',*fmt(m,f'e{fy}')])
+R=pd.DataFrame(res,columns=['アウトカム','項','IRR (95%CI)','irr','lo','hi','p']); R.to_csv(O+'t14_pref_did.csv',index=False); print(R.to_string())
 fig,ax=plt.subplots(1,2,figsize=(12,4.5))
 for k,s in g[g.expq!='中'].groupby('expq'): ax[0].plot(s.fy,s.rate,marker='o',label=k); ax[1].plot(s.fy,s.crate,marker='o',label=k)
 ax[0].set_title('都道府県群別 支給決定率（/100万就業者, 2015）'); ax[1].set_title('同 請求率')

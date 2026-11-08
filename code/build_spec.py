@@ -79,7 +79,7 @@ for t in tables:
 # ---------- compact main tables (built from data, replace parsed markdown tables) ----------
 T1=pd.read_csv(S+'Table1_descriptive.csv'); E1=open(S+'T1_total_Exe.csv').read().split('\n')[1].split(','); N1=open(S+'T1_total_Non.csv').read().split('\n')[1].split(',')
 def t1row(name,v):  # v: [emp, cl1,cl2,cl3, ap1,ap2,ap3, cvd1,cvd2,cvd3, r1,r2,r3]
-    v=[str(x) for x in v]; return [name,v[0]]+v[1:4]+v[4:7]+v[10:13]+v[7:10]
+    v=[str(x) for x in v]; v[0]=f'{float(v[0]):.2f}'; return [name,v[0]]+v[1:4]+v[4:7]+v[10:13]+v[7:10]
 rows1=['§Construction & transport (exempt until April 2024)']
 for i in [0,1]: rows1.append(t1row(T1.iloc[i,0],T1.iloc[i,2:].tolist()))
 rows1.append(t1row('**Subtotal**',E1[2:]))
@@ -178,11 +178,9 @@ h=['Method of inference','IRR (95% CI)','p']; r=grp(s3b,'_k')
 st.append({'title':[['Table S3b',1,0],[' Small-cluster inference for the main difference-in-differences estimates',0,0]],'header':h,'rows':r,'widths':[4826,2700,1200],
  'note':'Each experiment has eight industries (clusters), of which only two were newly capped (experiment 2) or served as controls (experiment 1). Wild cluster score bootstrap (primary method of inference; table 2): Kline and Santos score bootstrap clustered by industry with Webb six-point weights (9999 draws; seed 20261108), p value at IRR=1 and 95% CI by test inversion; it may still be unreliable with so few treated or control clusters (MacKinnon and Webb 2018). Sensitivity analyses: SE clustered by industry with t(7) critical values; placebo permutation, in which the treatment label is assigned to each of the 28 possible pairs of the eight industries (for experiment 2, placebo IRRs ranged from 0.79 to 1.15 and half were below 1). Placebo permutation results are descriptive only: the p value is the rank of the observed estimate among the 28 placebo estimates, and neither it nor an interval obtained by test inversion should be interpreted as randomization-based inference, because industry treatment assignments were not random or exchangeable; no interval is therefore reported; collapsed, in which counts and employment are summed within each industry for the pre-cap and post-cap periods (16 observations, HC1 standard errors), which should not be given more weight than the bootstrap. Excluding FY2023: wild cluster score bootstrap for the specification in table S3a. CVD, cerebro-cardiovascular diseases (positive control for exposure).'})
 s3=pd.read_csv(S+'TableS3.csv'); s3['IRR (95% CI)']=s3['IRR (95% CI)'].str.replace(r' p=.*','',regex=True)
-t14=pd.read_csv(O+'t14_pref_did.csv'); pv=t14['IRR (95%CI)'].str.extract(r'p=([\d.]+)')[0].fillna('–')
-s3['p']=[('<0.001' if float(x)<0.001 else f'{float(x):.2f}') if x!='\u2013' else '\u2013' for x in pv.values]
-def _two(v):
-    m=re.match(r'([\d.]+) \(([\d.]+) to ([\d.]+)\)',v); a,b,c=map(float,m.groups()); return f'{a:.2f}\n({b:.2f} to {c:.2f})'
-s3['IRR (95% CI)']=s3['IRR (95% CI)'].map(_two)
+t14=pd.read_csv(O+'t14_pref_did.csv')
+s3['p']=['<0.001' if x<0.001 else f'{x:.2f}' for x in t14['p']]
+s3['IRR (95% CI)']=[f'{a:.2f}\n({b:.2f} to {c:.2f})' for a,b,c in zip(t14['irr'],t14['lo'],t14['hi'])]
 s3['Outcome']=s3['Outcome'].replace({'Approvals':'MD approvals','Claims':'MD claims'})
 s3=s3.sort_values('Outcome',kind='stable')
 s3['Term']=s3['Term'].str.replace(r' \((ref\.|model)',lambda m: '\n('+m.group(1),regex=True)

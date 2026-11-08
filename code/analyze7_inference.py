@@ -103,7 +103,7 @@ for exp in (1,2):
         rows.append([con,lab,'Wild cluster score bootstrap (Webb weights, 9999 draws)',fmt(np.exp(b),np.exp(lo),np.exp(hi)),fp(pw)])
         pr=ri_p(df,y,0.0,inds)
         lo2,hi2,_,_=invert(lambda b0: ri_p(df,y,b0,inds),b,max(se,sec)) if y=='approvals' else (np.nan,np.nan,None,None)
-        rows.append([con,lab,'Placebo permutation (28 assignments)',fmt(np.exp(b),np.exp(lo2),np.exp(hi2)) if not np.isnan(lo2) else f'{np.exp(b):.2f} (CI not computed)',fp(pr)])
+        rows.append([con,lab,'Placebo permutation (28 assignments)',f'{np.exp(b):.2f} (no interval)',fp(pr)])  # descriptive only: no interval reported
         e,l,h,p=collapsed(df,y)
         rows.append([con,lab,'Collapsed to one pre and one post period',fmt(e,l,h),fp(p)])
         summ[(exp,y)]=dict(pw=pw,pr=pr,hc1=np.exp(r.conf_int().loc['tr:post']).tolist(),clu=[np.exp(b-tcrit*sec),np.exp(b+tcrit*sec)],wild=[np.exp(lo),np.exp(hi)],ri=[np.exp(lo2),np.exp(hi2)] if not np.isnan(lo2) else None,coll=[l,h])

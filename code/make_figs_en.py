@@ -57,8 +57,11 @@ for a,(k,c,title,(r0,r1),rlab),(xa,xb) in zip(ax,spec,[(2015.5,2023.5),(2019.5,2
     a.set_yscale('log'); a.set_ylim(0.44,2.0); a.set_yticks([0.5,0.7,1,1.4,2]); a.get_yaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter()); a.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     a.set_title(title,loc='left',fontweight='bold',pad=52,fontsize=9.5)
 ax[0].set_ylabel('IRR relative to the pre-cap mean (= 1)\n<1 = decline in newly capped group')
-h,l=ax[0].get_legend_handles_labels(); fig.legend(h+[matplotlib.lines.Line2D([],[],color='#7f9fbf',ls=':')],l+['April 2020: cap extended to small and medium-sized firms'],loc='lower center',ncol=3,frameon=False,fontsize=8.5)
-plt.tight_layout(w_pad=2,rect=(0,0.06,1,1)); plt.savefig('output/figures/Figure2.png',dpi=300); plt.close()
+L2=matplotlib.lines.Line2D
+hl=[L2([],[],marker='o',ls='',color=CC,ms=5),L2([],[],marker='o',ls='',color=CT,ms=5),L2([],[],marker='s',ls='',mfc='white',mec='#7f7f7f',ms=5),L2([],[],color='#7f9fbf',ls=':')]
+ll=['Mental disorders (main outcome), experiment 1','Mental disorders (main outcome), experiment 2','Cerebro-cardiovascular disease (positive control for exposure)','April 2020: cap extended to small and medium-sized firms']
+fig.legend(hl,ll,loc='lower center',ncol=2,frameon=False,fontsize=8.5)
+plt.tight_layout(w_pad=2,rect=(0,0.09,1,1)); plt.savefig('output/figures/Figure2.png',dpi=300); plt.close()
 
 # ---------- Supplementary Figure S1 (prefecture scatter) ----------
 p=pd.read_csv(O+'t12_pref_panel.csv')
