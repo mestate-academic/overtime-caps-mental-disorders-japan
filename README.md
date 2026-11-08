@@ -38,15 +38,16 @@ bash run_all.sh
 | 4 Precipitating events | `code/analyze4.py`, `code/build_events_2016.py` | `t17_events_approvals.csv`, `t24_events_2016_2025.csv` (Table 3) |
 | 5 Main DiD, sensitivity, placebo, Table 1 | `code/analyze5_sensitivity.py` | `output/tables/Table1_descriptive.csv`, `TableS6`, `TableS7_sensitivity.csv`, `TableS8`, `placebo.txt` |
 | 6 Event studies | `code/analyze6_eventstudy_pooled.py` | `TableS5_eventstudy_pooled.csv`, `t25_es_pooled.csv` (Figure 2) |
+| 6b Small-cluster inference | `code/analyze7_inference.py` | `TableS3b_inference.csv` (industry-clustered SEs, wild cluster score bootstrap with Webb weights, randomization inference, collapsed two-period models; supplementary table S3 and the wild-bootstrap column of Table 2), `inference_summary.pkl`; seed 20261108 |
 | 7 Figures and tables S1–S4 | `code/make_figs_en.py` | `output/figures/*.png`, `TableS1–S4` |
 | 8 Word manuscript (optional) | `code/build_spec.py`, `node code/render_docx.js` | `manuscript/Manuscript_OEM_v8.docx`, `Supplementary_OEM_v6.docx` |
 
-The main estimates in Table 2 of the paper (experiment 1: IRR 1.07, 95% CI 0.92 to 1.24; experiment 2: IRR 1.10, 0.93 to 1.30) are printed by `analyze5_sensitivity.py` and appear in `output/tables/TableS7_sensitivity.csv` under the specification "Main".
+The main estimates in Table 2 of the paper (experiment 1: IRR 1.07, robust 95% CI 0.92 to 1.24, wild cluster bootstrap 0.77 to 1.50; experiment 2: IRR 1.10, 0.93 to 1.30 and 0.93 to 1.50) are in `output/tables/TableS7_sensitivity.csv` ("Main") and `output/tables/TableS3b_inference.csv`.
 
 ## Analysis in brief
 
 - **Design.** Two natural experiments created by Japan's two-step overtime caps (Work Style Reform Act, Act No. 71 of 2018): experiment 1, six industries capped from April 2019 (large firms) / April 2020 (small and medium-sized firms) vs construction and transport (exempt), FY2016–2018 vs FY2019–2023; experiment 2, construction and transport capped from April 2024 vs the six industries, FY2021–2023 vs FY2024–2025.
-- **Model.** Poisson regression of annual counts with industry and fiscal-year fixed effects, an interaction between the newly capped group and the post-cap period, log employed persons as offset, HC1 standard errors. The IRR is the ratio of the after/before rate ratio in the newly capped group to that in the control group. Event studies are referenced to the log-scale mean of each experiment's pre-cap period.
+- **Model.** Poisson regression of annual counts with industry and fiscal-year fixed effects, an interaction between the newly capped group and the post-cap period, log employed persons as offset, HC1 standard errors; with eight industries per experiment, inference is also reported with industry-clustered SEs, a wild cluster score bootstrap, randomization inference and collapsed two-period models. The IRR is the ratio of the after/before rate ratio in the newly capped group to that in the control group. Event studies are referenced to the log-scale mean of each experiment's pre-cap period.
 - **Outcomes.** Approved claims (primary) and claims for work-related mental disorders; approvals and claims for cerebro-cardiovascular disease as a positive control for exposure.
 - **Additional analyses.** Permutation (placebo) test over all 28 pairs of the eight industries; prefecture panel (47 prefectures, FY2021–2025) using the 2015 share of employment in construction and transport as exposure intensity; approvals by precipitating event.
 

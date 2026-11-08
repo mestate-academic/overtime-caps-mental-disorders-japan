@@ -7,7 +7,7 @@ EN={'製造業':'Manufacturing','建設業':'Construction','運輸業郵便業':
 def fit(df,y,term,off='emp'):
     m=smf.glm(f'{y} ~ C(industry)+C(fy)+{term}',data=df,family=sm.families.Poisson(),offset=np.log(df[off])).fit(cov_type='HC1')
     b=m.params[term]; lo,hi=m.conf_int().loc[term]; return np.exp(b),np.exp(lo),np.exp(hi),m.pvalues[term]
-def fmt(r): return f'{r[0]:.2f} ({r[1]:.2f} to {r[2]:.2f})', f'{r[3]:.2f}'
+def fmt(r): return f'{r[0]:.2f} ({r[1]:.2f} to {r[2]:.2f})', ('<0.001' if r[3]<0.001 else f'{r[3]:.3f}' if r[3]<0.01 else f'{r[3]:.2f}')
 rows=[]
 # --- 2024 cap main & sensitivity
 d2=dd[dd.fy>=2021].copy(); d2['post24']=(d2.fy>=2024).astype(int)
