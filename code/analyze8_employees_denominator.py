@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Sensitivity analysis (reviewer request): employees instead of employed persons as the denominator.
+"""Sensitivity analysis: employees instead of employed persons as the denominator.
 
 Employed persons include the self-employed and family workers, who are not covered by workers'
 compensation insurance and are numerous in construction. Here the offset is log(employees) from

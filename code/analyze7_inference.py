@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Small-cluster inference for the main difference-in-differences estimates (reviewer request).
+"""Small-cluster inference for the main difference-in-differences estimates.
 
 For each experiment and outcome, the main Poisson DiD estimate is re-assessed with:
   (1) standard errors clustered by industry (CR1) with t(G-1) critical values;

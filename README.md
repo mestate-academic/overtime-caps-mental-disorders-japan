@@ -6,7 +6,7 @@ Repository: https://github.com/mestate-academic/overtime-caps-mental-disorders-j
 
 Preprint: medRxiv [DOI to be added]. Journal: submitted to *Occupational and Environmental Medicine*.
 
-> Note: `code/build_spec.py` and `code/render_docx.js` assemble the Word manuscript from the outputs; they are needed only for `BUILD_DOCX=1` and are not included in the review package sent to reviewers.
+> Note: `code/build_spec.py` and `code/render_docx.js` assemble the Word manuscript from the outputs; they are needed only for `BUILD_DOCX=1`.
 
 ## What is here
 
