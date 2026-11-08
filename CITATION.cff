@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use these data or code, please cite the paper (or preprint) and this repository."
+type: dataset
+title: "Data and code for: Statutory overtime caps and compensated mental disorders in Japan: two natural experiments in 10 years of national data, 2016–2025"
+authors:
+  - family-names: Uematsu
+    given-names: Hironori
+    affiliation: "Uematsu Occupational Physician's Office (Mestate LLC), Kyoto, Japan"
+    email: office@mestate.jp
+version: "1.0.0"
+date-released: "2026-11-08"
+license: "MIT AND CC-BY-4.0"
+keywords:
+  - working hours
+  - overtime regulation
+  - workers' compensation
+  - mental disorders
+  - difference-in-differences
+  - Japan
+preferred-citation:
+  type: article
+  title: "Statutory overtime caps and compensated mental disorders in Japan: two natural experiments in 10 years of national data, 2016–2025"
+  authors:
+    - family-names: Uematsu
+      given-names: Hironori
+  year: 2026
+  journal: "medRxiv (preprint; DOI to be added)"

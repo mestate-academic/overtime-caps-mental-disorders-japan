@@ -1,0 +1,24 @@
+Contrast,Specification,Outcome,IRR (95% CI),p
+2024 cap,"Main (FY2021–25, 6 controls)",Approvals,1.10 (0.93 to 1.30),0.27
+2024 cap,Excluding accommodation and food services,Approvals,1.12 (0.95 to 1.33),0.19
+2024 cap,Excluding FY2023 (anticipation year),Approvals,1.30 (1.11 to 1.53),0.00
+2024 cap,Longer pre-period (FY2016–25),Approvals,1.13 (0.99 to 1.28),0.06
+2024 cap,Construction only vs 6 controls,Approvals,1.17 (0.87 to 1.57),0.29
+2024 cap,Transport and postal services only vs 6 controls,Approvals,1.05 (0.87 to 1.27),0.63
+2019–20 cap,Main (FY2016–23),Approvals,1.07 (0.92 to 1.24),0.41
+2019–20 cap,Excluding FY2023 (anticipation in controls),Approvals,1.19 (1.03 to 1.36),0.01
+2019–20 cap,Excluding FY2020–21 (COVID-19),Approvals,1.03 (0.87 to 1.23),0.74
+2019–20 cap,Excluding accommodation and food services,Approvals,1.04 (0.89 to 1.22),0.60
+2019–20 cap,Main (FY2016–23),Claims,1.12 (1.02 to 1.23),0.01
+2019–20 cap,Excluding FY2023,Claims,1.15 (1.04 to 1.27),0.01
+2019–20 cap,"Positive control, main (FY2016–23)",CVD approvals,1.01 (0.80 to 1.28),0.93
+2019–20 cap,"Positive control, excluding FY2023",CVD approvals,1.03 (0.80 to 1.33),0.83
+2019–20 cap,"Positive control, main (FY2016–23)",CVD claims,0.96 (0.85 to 1.08),0.49
+2024 cap,"Positive control, longer pre-period (FY2016–25)",CVD approvals,1.01 (0.76 to 1.34),0.95
+2024 cap,"Positive control, longer pre-period (FY2016–25)",CVD claims,1.02 (0.93 to 1.12),0.68
+2024 cap,"Claims, longer pre-period (FY2016–25)",Claims,0.95 (0.87 to 1.04),0.28
+2024 cap,Health care and welfare added to construction & transport (post hoc),Approvals,1.13 (1.02 to 1.26),0.02
+2024 cap,Health care and welfare only vs 6 controls (post hoc),Approvals,1.15 (1.02 to 1.30),0.02
+2019–20 cap,"Excluding FY2019, transition year (post hoc)",Approvals,1.03 (0.88 to 1.21),0.72
+2024 cap,Pre-period FY2019–23 (post hoc),Approvals,1.15 (1.00 to 1.33),0.06
+2024 cap,Pre-period FY2020–23 (post hoc),Approvals,1.11 (0.96 to 1.29),0.17

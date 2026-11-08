@@ -1,0 +1,1 @@
+Placebo distribution over all 28 pairs of industries: actual log-IRR ranked with permutation p=0.36; placebo IRR range 0.79–1.15; share of placebo IRR<1: 0.50

@@ -1,0 +1,15 @@
+Outcome,Term,IRR (95% CI)
+Approvals,Exposure (per SD) × post-2024,1.030 (0.949 to 1.119) p=0.477
+Approvals,Exposure (per SD) × FY2023 (anticipation),1.041 (0.919 to 1.179) p=0.529
+Approvals,Exposure × post-2024 (model including FY2023 term),1.047 (0.932 to 1.176) p=0.442
+Claims,Exposure (per SD) × post-2024,0.985 (0.958 to 1.013) p=0.298
+Claims,Exposure (per SD) × FY2023 (anticipation),0.985 (0.949 to 1.023) p=0.442
+Claims,Exposure × post-2024 (model including FY2023 term),0.979 (0.942 to 1.018) p=0.287
+Approvals,Event study: exposure × FY2022 (ref. FY2021),1.053 (0.925 to 1.199)
+Approvals,Event study: exposure × FY2023 (ref. FY2021),1.070 (0.967 to 1.184)
+Approvals,Event study: exposure × FY2024 (ref. FY2021),1.080 (0.963 to 1.210)
+Approvals,Event study: exposure × FY2025 (ref. FY2021),1.072 (0.982 to 1.171)
+Claims,Event study: exposure × FY2022 (ref. FY2021),1.020 (0.982 to 1.060)
+Claims,Event study: exposure × FY2023 (ref. FY2021),0.996 (0.944 to 1.051)
+Claims,Event study: exposure × FY2024 (ref. FY2021),1.010 (0.954 to 1.069)
+Claims,Event study: exposure × FY2025 (ref. FY2021),0.975 (0.922 to 1.030)
