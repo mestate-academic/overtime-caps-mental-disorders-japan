@@ -85,6 +85,6 @@ See `CITATION.cff`. Please cite the paper once published; until then, cite the m
 - `data/`：厚生労働省「過労死等の労災補償状況」（各年度）、労働力調査、平成27年国勢調査から転記した集計統計（CSV）。個人データは含みません。各ファイルの列と出典は `data/DATA_DICTIONARY.md` を参照。
 - `code/`：データ構築（`build_data*.py`）、解析（`analyze2`〜`analyze6`、`build_events_2016.py`）、図（`make_figs_en.py`）、Word原稿の生成（`build_spec.py`、`render_docx.js`）。
 - `output/`：論文の表1・補足表S1〜S8と図1・2・S1・S2。
-- `manuscript/`：原稿（英語・日本語訳）。
+- `manuscript/`：原稿（英語。OEM投稿版、medRxiv版、補足資料、STROBEチェックリスト）。
 
 再現は、リポジトリのルートで `pip install -r requirements.txt` の後に `bash run_all.sh` を実行してください。主要推定値（実験1 IRR 1.07、実験2 IRR 1.10）は `output/tables/TableS7_sensitivity.csv` の "Main" 行に出力されます。
