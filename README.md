@@ -2,6 +2,8 @@
 
 Data and code for the manuscript by Hironori Uematsu (Uematsu Occupational Physician's Office / Mestate LLC, Kyoto, Japan). Correspondence: office@mestate.jp.
 
+Repository: https://github.com/mestate-academic/overtime-caps-mental-disorders-japan
+
 Preprint: medRxiv [DOI to be added]. Journal: submitted to *Occupational and Environmental Medicine*.
 
 ## What is here
