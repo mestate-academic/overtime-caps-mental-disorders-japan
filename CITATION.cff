@@ -10,6 +10,7 @@ authors:
 version: "1.0.0"
 date-released: "2026-11-08"
 license: "MIT AND CC-BY-4.0"
+repository-code: "https://github.com/hironoriuematsu-byte/overtime-caps-mental-disorders-japan"
 keywords:
   - working hours
   - overtime regulation
