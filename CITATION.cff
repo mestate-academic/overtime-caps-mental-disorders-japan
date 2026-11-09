@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use these data or code, please cite the paper (or preprint) and this repository."
+message: "If you use these data or code, please cite this repository (and the paper once published)."
 type: dataset
 title: "Data and code for: Statutory overtime caps and compensated mental disorders in Japan: two natural experiments in 10 years of national data, 2016–2025"
 authors:
@@ -20,11 +20,11 @@ keywords:
   - difference-in-differences
   - Japan
 preferred-citation:
-  type: article
+  type: unpublished
   title: "Statutory overtime caps and compensated mental disorders in Japan: two natural experiments in 10 years of national data, 2016–2025"
   authors:
     - family-names: Uematsu
       given-names: Hironori
       orcid: "https://orcid.org/0009-0006-9927-7473"
   year: 2026
-  journal: "medRxiv (preprint; DOI to be added)"
+  notes: "Manuscript under review at Occupational and Environmental Medicine"

@@ -14,8 +14,6 @@
 
 **Keywords:** working hours; occupational stress; workers' compensation; mental disorders; health policy
 
-**Preprint:** submitted to medRxiv (MEDRXIV/2026/367518).
-
 ---
 
 ## ABSTRACT
